@@ -16,52 +16,52 @@ public class Usuario {
 	@Id
 	@Column(name = "idusuario")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idusuario;
+	private Long idUsuario;
 	
 	@Column(name = "nomeusuario")
-	private String nomeusuario;
+	private String nomeUsuario;
 	
 	@Column(name = "emailusuario")
-	private String emailusuario;
+	private String emailUsuario;
 	
 	@Column(name = "senhausuario")
-	private String senhausuario;
+	private String senhaUsuario;
 
 	public Long getIdusuario() {
-		return idusuario;
+		return idUsuario;
 	}
 
 	public void setIdusuario(Long idusuario) {
-		this.idusuario = idusuario;
+		this.idUsuario = idusuario;
 	}
 
 	public String getNomeusuario() {
-		return nomeusuario;
+		return nomeUsuario;
 	}
 
 	public void setNomeusuario(String nomeusuario) {
-		this.nomeusuario = nomeusuario;
+		this.nomeUsuario = nomeusuario;
 	}
 
 	public String getEmailusuario() {
-		return emailusuario;
+		return emailUsuario;
 	}
 
 	public void setEmailusuario(String emailusuario) {
-		this.emailusuario = emailusuario;
+		this.emailUsuario = emailusuario;
 	}
 
 	public String getSenhausuario() {
-		return senhausuario;
+		return senhaUsuario;
 	}
 
 	public void setSenhausuario(String senhausuario) {
-		this.senhausuario = senhausuario;
+		this.senhaUsuario = senhausuario;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(emailusuario, idusuario, nomeusuario, senhausuario);
+		return Objects.hash(emailUsuario, idUsuario, nomeUsuario, senhaUsuario);
 	}
 
 	@Override
@@ -73,13 +73,13 @@ public class Usuario {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		return Objects.equals(emailusuario, other.emailusuario) && Objects.equals(idusuario, other.idusuario)
-				&& Objects.equals(nomeusuario, other.nomeusuario) && Objects.equals(senhausuario, other.senhausuario);
+		return Objects.equals(emailUsuario, other.emailUsuario) && Objects.equals(idUsuario, other.idUsuario)
+				&& Objects.equals(nomeUsuario, other.nomeUsuario) && Objects.equals(senhaUsuario, other.senhaUsuario);
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [idusuario=" + idusuario + ", nomeusuario=" + nomeusuario + ", emailusuario=" + emailusuario
-				+ ", senhausuario=" + senhausuario + "]";
+		return "Usuario [idusuario=" + idUsuario + ", nomeusuario=" + nomeUsuario + ", emailusuario=" + emailUsuario
+				+ ", senhausuario=" + senhaUsuario + "]";
 	}
 }

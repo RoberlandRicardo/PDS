@@ -34,7 +34,7 @@ CREATE TABLE tarefas.Tarefa (
   descricaoTarefa VARCHAR(100) NOT NULL,
   dataTarefa DATE DEFAULT NOW() NOT NULL,
   horario TIME NOT NULL,
-  statusTabela VARCHAR(50) CHECK (statusTabela IN ('Não iniciado', 'Em andamento', 'Finalizado')) NOT NULL,
+  statusTarefa VARCHAR(50) CHECK (statusTabela IN ('Não iniciado', 'Em andamento', 'Finalizado')) NOT NULL,
   PRIMARY KEY(idTarefa),
   FOREIGN KEY(Projeto_idProjeto)
     REFERENCES tarefas.Projeto(idProjeto)

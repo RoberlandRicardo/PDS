@@ -340,7 +340,7 @@
 <OPTIONSELECTED>
 </OPTIONSELECTED>
 </COLUMN>
-<COLUMN ID="2561" ColName="statusTabela" PrevColName="" Pos="4" idDatatype="31" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="\AN\227o iniciado\A, \AEm andamento\A, \AFinalizado\A" Comments="">
+<COLUMN ID="2561" ColName="statusTarefa" PrevColName="statusTabela" Pos="4" idDatatype="31" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="\AN\227o iniciado\A, \AEm andamento\A, \AFinalizado\A" Comments="">
 <OPTIONSELECTED>
 </OPTIONSELECTED>
 </COLUMN>
