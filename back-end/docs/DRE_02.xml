@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes" ?>
 <DBMODEL Version="4.0">
 <SETTINGS>
-<GLOBALSETTINGS ModelName="DER_db" IDModel="0" IDVersion="0" VersionStr="1.0.0.0" Comments="" UseVersionHistroy="1" AutoIncVersion="1" DatabaseType="MySQL" ZoomFac="100.00" XPos="0" YPos="0" DefaultDataType="5" DefaultTablePrefix="0" DefSaveDBConn="" DefSyncDBConn="" DefQueryDBConn="" Printer="HP LaserJet Professional P1102w" HPageCount="4.0" PageAspectRatio="1.430727310836303" PageOrientation="1" PageFormat="A4 (210x297 mm, 8.26x11.7 inches)" SelectedPages="" UsePositionGrid="0" PositionGridX="20" PositionGridY="20" TableNameInRefs="1" DefaultTableType="0" ActivateRefDefForNewRelations="1" FKPrefix="" FKPostfix="" CreateFKRefDefIndex="1" DBQuoteCharacter="`" CreateSQLforLinkedObjects="0" DefModelFont="Tahoma" CanvasWidth="4096" CanvasHeight="2842" />
+<GLOBALSETTINGS ModelName="DER_db" IDModel="0" IDVersion="0" VersionStr="1.0.0.0" Comments="" UseVersionHistroy="1" AutoIncVersion="1" DatabaseType="MySQL" ZoomFac="100.00" XPos="54" YPos="240" DefaultDataType="5" DefaultTablePrefix="0" DefSaveDBConn="" DefSyncDBConn="" DefQueryDBConn="" Printer="HP LaserJet Professional P1102w" HPageCount="4.0" PageAspectRatio="1.430727310836303" PageOrientation="1" PageFormat="A4 (210x297 mm, 8.26x11.7 inches)" SelectedPages="" UsePositionGrid="0" PositionGridX="20" PositionGridY="20" TableNameInRefs="1" DefaultTableType="0" ActivateRefDefForNewRelations="1" FKPrefix="" FKPostfix="" CreateFKRefDefIndex="1" DBQuoteCharacter="`" CreateSQLforLinkedObjects="0" DefModelFont="Tahoma" CanvasWidth="4096" CanvasHeight="2842" />
 <DATATYPEGROUPS>
 <DATATYPEGROUP Name="Numeric Types" Icon="1" />
 <DATATYPEGROUP Name="Date and Time Types" Icon="2" />
@@ -313,7 +313,7 @@
 </INDEX>
 </INDICES>
 </TABLE>
-<TABLE ID="2551" Tablename="Tarefa" PrevTableName="Table_02" XPos="290" YPos="469" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="1" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="3" >
+<TABLE ID="2551" Tablename="Tarefa" PrevTableName="Table_02" XPos="290" YPos="469" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="3" >
 <COLUMNS>
 <COLUMN ID="2553" ColName="idTarefa" PrevColName="" Pos="0" idDatatype="6" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
@@ -332,7 +332,7 @@
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
 </COLUMN>
-<COLUMN ID="2556" ColName="dataTarefa" PrevColName="data_2" Pos="2" idDatatype="14" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<COLUMN ID="2556" ColName="dataTarefa" PrevColName="data_2" Pos="2" idDatatype="14" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="NOW()" Comments="">
 <OPTIONSELECTED>
 </OPTIONSELECTED>
 </COLUMN>
@@ -346,8 +346,8 @@
 </COLUMN>
 </COLUMNS>
 <RELATIONS_START>
-<RELATION_START ID="2582" />
 <RELATION_START ID="2588" />
+<RELATION_START ID="2626" />
 </RELATIONS_START>
 <RELATIONS_END>
 <RELATION_END ID="2599" />
@@ -373,14 +373,14 @@
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
 </COLUMN>
-<COLUMN ID="2567" ColName="descricaoTasklist" PrevColName="" Pos="1" idDatatype="20" DatatypeParams="(100))" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<COLUMN ID="2567" ColName="descricaoTasklist" PrevColName="" Pos="1" idDatatype="20" DatatypeParams="(100)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
 </COLUMN>
 </COLUMNS>
 <RELATIONS_START>
-<RELATION_START ID="2585" />
+<RELATION_START ID="2629" />
 </RELATIONS_START>
 <INDICES>
 <INDEX ID="2566" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1">
@@ -390,15 +390,21 @@
 </INDEX>
 </INDICES>
 </TABLE>
-<TABLE ID="2568" Tablename="tarefa_has_tasklist" PrevTableName="Table_04" XPos="608" YPos="514" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="1" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="5" >
+<TABLE ID="2568" Tablename="tarefa_has_tasklist" PrevTableName="Table_04" XPos="608" YPos="514" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="5" >
 <COLUMNS>
-<COLUMN ID="2586" ColName="Tasklist_idTasklist" PrevColName="" Pos="1" idDatatype="6" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+<COLUMN ID="2620" ColName="id_Tarefa_has_tasklist" PrevColName="" Pos="2" idDatatype="6" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
 <OPTIONSELECT Value="0" />
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
 </COLUMN>
-<COLUMN ID="2583" ColName="Tarefa_idTarefa" PrevColName="" Pos="1" idDatatype="6" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+<COLUMN ID="2630" ColName="Tasklist_idTasklist" PrevColName="" Pos="1" idDatatype="6" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+<OPTIONSELECTED>
+<OPTIONSELECT Value="0" />
+<OPTIONSELECT Value="0" />
+</OPTIONSELECTED>
+</COLUMN>
+<COLUMN ID="2627" ColName="Tarefa_idTarefa" PrevColName="" Pos="1" idDatatype="6" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
 <OPTIONSELECTED>
 <OPTIONSELECT Value="0" />
 <OPTIONSELECT Value="0" />
@@ -406,18 +412,18 @@
 </COLUMN>
 </COLUMNS>
 <RELATIONS_END>
-<RELATION_END ID="2582" />
-<RELATION_END ID="2585" />
+<RELATION_END ID="2626" />
+<RELATION_END ID="2629" />
 </RELATIONS_END>
 <INDICES>
-<INDEX ID="2584" IndexName="tarefa_has_tasklist_FKIndex1" IndexKind="1" FKRefDef_Obj_id="2582">
+<INDEX ID="2628" IndexName="tarefa_has_tasklist_FKIndex1" IndexKind="1" FKRefDef_Obj_id="2626">
 <INDEXCOLUMNS>
-<INDEXCOLUMN idColumn="2583" LengthParam="0" />
+<INDEXCOLUMN idColumn="2627" LengthParam="0" />
 </INDEXCOLUMNS>
 </INDEX>
-<INDEX ID="2587" IndexName="tarefa_has_tasklist_FKIndex2" IndexKind="1" FKRefDef_Obj_id="2585">
+<INDEX ID="2631" IndexName="tarefa_has_tasklist_FKIndex2" IndexKind="1" FKRefDef_Obj_id="2629">
 <INDEXCOLUMNS>
-<INDEXCOLUMN idColumn="2586" LengthParam="0" />
+<INDEXCOLUMN idColumn="2630" LengthParam="0" />
 </INDEXCOLUMNS>
 </INDEX>
 </INDICES>
@@ -458,7 +464,7 @@
 </INDEX>
 </INDICES>
 </TABLE>
-<TABLE ID="2592" Tablename="Projeto" PrevTableName="Table_06" XPos="403" YPos="300" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="1" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="11" >
+<TABLE ID="2592" Tablename="Projeto" PrevTableName="Table_06" XPos="404" YPos="300" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="11" >
 <COLUMNS>
 <COLUMN ID="2594" ColName="idProjeto" PrevColName="" Pos="0" idDatatype="6" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
@@ -494,11 +500,11 @@
 </TABLE>
 </TABLES>
 <RELATIONS>
-<RELATION ID="2582" RelationName="Contem" Kind="2" SrcTable="2551" DestTable="2568" FKFields="idTarefa=Tarefa_idTarefa\n" FKFieldsComments="\n" relDirection="2" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2584" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="8" />
-<RELATION ID="2585" RelationName="Estah_contido" Kind="2" SrcTable="2563" DestTable="2568" FKFields="idTasklist=Tasklist_idTasklist\n" FKFieldsComments="\n" relDirection="1" MidOffset="-19" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-12" CaptionOffsetY="-51" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2587" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="9" />
 <RELATION ID="2588" RelationName="Possui" Kind="2" SrcTable="2551" DestTable="2570" FKFields="idTarefa=Tarefa_idTarefa\n" FKFieldsComments="\n" relDirection="3" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2590" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="10" />
 <RELATION ID="2596" RelationName="Possui" Kind="2" SrcTable="1000" DestTable="2592" FKFields="idUsuario=Usuario_idUsuario\n" FKFieldsComments="\n" relDirection="3" MidOffset="8" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2598" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="12" />
 <RELATION ID="2599" RelationName="Contem" Kind="2" SrcTable="2592" DestTable="2551" FKFields="idProjeto=Projeto_idProjeto\n" FKFieldsComments="\n" relDirection="3" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2601" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="13" />
+<RELATION ID="2626" RelationName="Contem" Kind="2" SrcTable="2551" DestTable="2568" FKFields="idTarefa=Tarefa_idTarefa\n" FKFieldsComments="\n" relDirection="2" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2628" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="12" />
+<RELATION ID="2629" RelationName="Estah contido" Kind="2" SrcTable="2563" DestTable="2568" FKFields="idTasklist=Tasklist_idTasklist\n" FKFieldsComments="\n" relDirection="1" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2631" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="13" />
 </RELATIONS>
 <NOTES>
 <NOTE ID="2591" NoteName="Note_01" XPos="471" YPos="51" NoteText="OP\199\195O 02\n" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="11" />
