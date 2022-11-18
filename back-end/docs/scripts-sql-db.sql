@@ -61,15 +61,17 @@ CREATE TABLE tarefas.Tasklist (
 
 SELECT * FROM tarefas.Tasklist;
 
-CREATE TABLE tarefa_has_tasklist (
+CREATE TABLE tarefas.tarefa_has_tasklist (
   id_Tarefa_has_tasklist BIGSERIAL NOT NULL,
   Tasklist_idTasklist BIGINT NOT NULL,
   Tarefa_idTarefa BIGINT NOT NULL,
+  PRIMARY KEY(id_Tarefa_has_tasklist),
   FOREIGN KEY(Tarefa_idTarefa)
     REFERENCES tarefas.Tarefa(idTarefa),
   FOREIGN KEY(Tasklist_idTasklist)
     REFERENCES tarefas.Tasklist(idTasklist)
 );
 
-SELECT * FROM tarefa_has_tasklist;
+
+SELECT * FROM tarefas.tarefa_has_tasklist;
 
