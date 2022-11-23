@@ -1,0 +1,29 @@
+
+.standard-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.standard-button-bg-color-outline {
+    color: var(--fontColorWhite);
+    border: 2.5px solid var(--secundary);
+    background-color: var(--primary);
+}
+
+.standard-button-bg-color-outline:hover {
+    background-color: var(--primaryDark);
+}
+
+
+.standard-button-bg-color {
+    background-color: var(--secundary);
+}
+
+.standard-button-bg-color:hover {
+    background-color: var(--secundaryDark);
+}
