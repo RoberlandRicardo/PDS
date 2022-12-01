@@ -1,0 +1,36 @@
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: 60px;
+    padding-inline: 16px;
+    background-color: var(--primary);
+}
+
+.title-header {
+    color: var(--fontColorWhite);
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.nav-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item-nav-header {
+    margin-inline: 12px;
+    color: var(--fontColorWhite);
+}
+
+.icon-standard-header {
+    margin-right: 8px;
+}
+
+.icon-session-header {
+    margin-left: 20px;
+    color: var(--fontColorWhite);
+    font-size: 32px;
+}

@@ -1,0 +1,32 @@
+.container-standard-input {
+    flex-direction: column;
+    padding-inline: 6px;
+    padding-block: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--fontColorPlaceholder);
+    border-radius: 5px;
+}
+
+.label-standard-input {
+    position: relative;
+    top: 3px;
+    margin-bottom: 3px;
+    color: var(--fontColorPlaceholder);
+    font-size: 10px;
+}
+
+.standard-input {
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    padding: 0px;
+    font-size: 14px;
+    border-width: 0;
+    background-color: transparent;
+}
+
+.standard-input:focus {
+    border-width: 0;
+    
+}

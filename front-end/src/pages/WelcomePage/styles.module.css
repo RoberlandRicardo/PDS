@@ -1,0 +1,60 @@
+
+.main {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--primary);
+}
+
+.h1, .h4 {
+    color: var(--fontColorWhite);
+}
+
+.h1 {
+    font-size: 56px;
+}
+
+.h4 { 
+    font-size: 24px;
+    
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.textContainer {
+    width: 30vw;
+    padding-inline: 100px;
+    margin-bottom: 70px;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.buttonMain {
+    width: 100px;
+    margin-inline: 20px;
+    font-size: 14px;
+}
+
+.imageContainer {
+    width: 35vw;
+    margin-left: 10vw;
+}
+
+.img {
+    width: 33vw;
+    height: auto;
+    
+}
+
+.strong {
+    font-family: 'Pattaya', Pattaya, serif;
+}

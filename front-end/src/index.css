@@ -1,0 +1,62 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --background: #EDEDED;
+    --backgroundLight: #FAFAFA;
+    --backgroundDark: #EDEDED;
+
+    --primary: #235789;
+    --primaryDark: #1d4870;
+
+    --secundary: #F1D302;
+    --secundaryDark: #e6ca12;
+
+    --fontColor: #1A1A1A;
+    --fontColorWhite: #F2F2F2;
+    --fontColorPlaceholder: #666666;
+    --fontColorAlternative: #333333;
+}
+
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--fontColor);
+  background-color: var(--background);
+}
+
+body > #root > div {
+  width: 100vw;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: 'Pattaya';
+  src: local('Pattaya'), url(./assets/fonts/Pattaya-Regular.ttf) format('truetype');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a, button {
+  cursor: pointer;
+  color: var(--fontColor);
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 8px;
+  list-style-type: none;
+}
+
+.logo-font {
+  font-family: 'Pattaya', Pattaya, serif;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
