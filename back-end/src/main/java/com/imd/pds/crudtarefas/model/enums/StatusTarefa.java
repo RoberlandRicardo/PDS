@@ -1,4 +1,4 @@
-package com.imd.pds.crudtarefas.model.entity;
+package com.imd.pds.crudtarefas.model.enums;
 
 public enum StatusTarefa {
 	
