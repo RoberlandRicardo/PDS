@@ -8,4 +8,5 @@ import com.imd.pds.crudtarefas.model.entity.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
+	boolean existByEmailUsuario(String emailUsuario);
 }

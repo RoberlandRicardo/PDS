@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.imd.pds.crudtarefas.model.entity.Tarefa;
 
-@Repository
 public interface TarefaRepository extends JpaRepository<Tarefa, Long> {
 
 }
