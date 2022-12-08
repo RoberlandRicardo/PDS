@@ -11,42 +11,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.imd.taskapp.entities.Usuario;
-import br.com.imd.taskapp.repositories.UsuarioRepository;
+import br.com.imd.taskapp.entities.Tag;
+import br.com.imd.taskapp.repositories.TagRepository;
 
 @RestController
-@RequestMapping(value = "/usuario")
-public class UsuarioController {
+@RequestMapping(value = "/tag")
+public class TagController {
 	
 	@Autowired
-	private UsuarioRepository repository;
+	TagRepository repository;
 	
-	@PostMapping
-	public Usuario createUser(@RequestBody Usuario user) {
-		Usuario result = repository.save(user);
+	@GetMapping
+	public List<Tag> findAllTag(){
+		List<Tag> result = repository.findAll();
 		return result;
 	}
 	
 	@GetMapping(value = "/{id}")
-	public Usuario getUserById( @PathVariable Long id ) {
-		Usuario result = repository.findById(id).get();
+	public Tag findTagById(@PathVariable long id ) {
+		Tag result = repository.findById(id).get();
 		return result;
 	}
 	
-	@GetMapping
-	public List<Usuario> getAllUsers(){
-		List<Usuario> result = repository.findAll();
+	@PostMapping
+	public Tag createTag(@RequestBody Tag tag) {
+		Tag result = repository.save(tag);
 		return result;
 	}
 	
 	@DeleteMapping(value = "/{id}")
-	public void removeUser( @PathVariable long id ) {
-		try {
-			repository.deleteById(id);
-		} catch( Exception e ) {
-			e.printStackTrace();
-		}
+	public void deleteTag(@PathVariable long id) {
+		repository.deleteById(id);
 	}
-	
-
 }

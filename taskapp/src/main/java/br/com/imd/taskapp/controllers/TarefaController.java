@@ -11,36 +11,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.imd.taskapp.entities.Usuario;
-import br.com.imd.taskapp.repositories.UsuarioRepository;
+import br.com.imd.taskapp.entities.Tarefa;
+import br.com.imd.taskapp.repositories.TarefaRepository;
 
 @RestController
-@RequestMapping(value = "/usuario")
-public class UsuarioController {
+@RequestMapping(value="/tarefa")
+public class TarefaController {
 	
 	@Autowired
-	private UsuarioRepository repository;
+	private TarefaRepository repository;
 	
+	//create
 	@PostMapping
-	public Usuario createUser(@RequestBody Usuario user) {
-		Usuario result = repository.save(user);
+	public Tarefa createTarefa(@RequestBody Tarefa task) {
+		Tarefa result = repository.save(task);
 		return result;
 	}
 	
-	@GetMapping(value = "/{id}")
-	public Usuario getUserById( @PathVariable Long id ) {
-		Usuario result = repository.findById(id).get();
-		return result;
-	}
-	
-	@GetMapping
-	public List<Usuario> getAllUsers(){
-		List<Usuario> result = repository.findAll();
-		return result;
-	}
-	
+	//delete
 	@DeleteMapping(value = "/{id}")
-	public void removeUser( @PathVariable long id ) {
+	public void deleteTarefa(@PathVariable long id) {
 		try {
 			repository.deleteById(id);
 		} catch( Exception e ) {
@@ -48,5 +38,17 @@ public class UsuarioController {
 		}
 	}
 	
+	//findAll
+	@GetMapping
+	public List<Tarefa> getAllTarefas(){
+		List<Tarefa> result = repository.findAll();
+		return result;
+	}
+	
+	@GetMapping(value="/{id}")
+	public Tarefa getTarefaById(@PathVariable long id) {
+		Tarefa result = repository.findById(id).get();
+		return result;
+	}
 
 }
