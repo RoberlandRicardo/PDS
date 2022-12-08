@@ -15,7 +15,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="tarefa", schema="tarefas")
+@Table(name="tarefa")
 public class Tarefa {
 	
 	@Id
@@ -41,6 +41,10 @@ public class Tarefa {
 			inverseJoinColumns= @JoinColumn(name="idtag")
 			)
 	private List<Tag> tags;
+	
+	public Tarefa() {
+		
+	}
 
 	public Tarefa(long id, long idUsuario, String descricao, LocalDate date, StatusTarefa status) {
 		this.id = id;

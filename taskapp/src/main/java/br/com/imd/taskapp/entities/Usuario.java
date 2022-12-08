@@ -12,7 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="usuario", schema="tarefas")
+@Table(name="usuario")
 public class Usuario {
 	
 	@Id
@@ -31,6 +31,10 @@ public class Usuario {
 	@OneToMany
 	@JoinColumn(name = "idusuario")
 	private List<Tarefa> tarefas;
+	
+	public Usuario() {
+		
+	}
 
 	public Usuario(long id, String nome, String email, String senha) {
 		this.id = id;

@@ -11,7 +11,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="tag", schema="tarefas")
+@Table(name="tag")
 public class Tag {
 	
 	@Id
@@ -26,6 +26,10 @@ public class Tag {
 	
 	@ManyToMany(mappedBy="tags")
 	private List<Tarefa> tarefas;
+	
+	public Tag() {
+		
+	}
 
 	public Tag(long id, long idTarefa, String nome) {
 		this.id = id;
