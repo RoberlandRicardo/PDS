@@ -5,44 +5,41 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.2.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->		
+		<version>3.0.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.imd.pds</groupId>
-	<artifactId>crudtarefas</artifactId>
+	
+	<groupId>br.com.imd</groupId>
+	<artifactId>taskapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>crudtarefas</name>
-	<description>Projeto para gerenciamento de tarefas</description>
+	<name>taskapp</name>
+	<description>Demo project for Spring Boot</description>
+	
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-		</dependency>
-		
 	</dependencies>
 
 	<build>
