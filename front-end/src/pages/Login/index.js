@@ -28,7 +28,7 @@ function Login(params) {
                 <h1 className={styles.h1 + ' logo-font'}>MultiTarefas</h1>
                 <form className={styles.form}>
                     <h6 className={styles.h6}>Entrar</h6>
-                    <Input label="Login" className={styles.input} />
+                    <Input label="Email" className={styles.input} />
                     <Input label="Senha" type="password" className={styles.input} />
                 </form>
                 <Button className={styles.buttonSubmit} onClick={() => executeLogin()}> REALIZAR LOGIN </Button>
