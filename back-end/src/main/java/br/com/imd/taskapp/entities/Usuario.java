@@ -83,5 +83,9 @@ public class Usuario {
 		this.tarefas = tarefas;
 	}
 	
+	public void addTarefa( Tarefa task ) {
+		tarefas.add(task);
+	}
+	
 	
 }
