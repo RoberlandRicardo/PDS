@@ -11,7 +11,12 @@ function Registrar(params) {
     function cadastrar() {
         enviarRequisicao({
             method: "POST",
-            endpoint: "/usuario"
+            endpoint: "/usuario",
+            data:{
+                nome: "Luisa",
+                email: "luisa@exemplo.com",
+                senha: "123456"
+            }
         })
     }
 

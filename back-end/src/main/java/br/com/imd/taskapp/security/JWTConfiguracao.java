@@ -1,5 +1,7 @@
 package br.com.imd.taskapp.security;
 
+import java.util.Arrays;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -39,6 +41,7 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
 			.addFilter(new JWTAutenticarFilter(authenticationManager()))
 			.addFilter(new JWTValidarFilter(authenticationManager()))
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http.cors();
 	}
 	
 	@Bean
@@ -46,6 +49,10 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		
 		CorsConfiguration corsConfiguration = new CorsConfiguration().applyPermitDefaultValues();
+		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+		corsConfiguration.setAllowedMethods(Arrays.asList("GET","POST"));
+		corsConfiguration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Origin", "*"));
+
 		source.registerCorsConfiguration("/**", corsConfiguration);
 		
 		return source;

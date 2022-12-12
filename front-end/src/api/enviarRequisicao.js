@@ -11,7 +11,10 @@ function useEnviarRequisicao() {
         var response = null;
 
         const config = {
-            headers: {...headers}
+            headers: {...headers,
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json'
+            }
         }
 
         switch (method) {
@@ -19,7 +22,11 @@ function useEnviarRequisicao() {
                 response = api.get(endpoint, config);
             break;
             case 'POST':
-                response = api.post(endpoint, data, config);
+                response = api.post(endpoint, data, {
+                    headers: {
+                      'Access-Control-Allow-Origin': '*',
+                    }
+                  });
             break;
             case 'PUT':
                 response = api.put(endpoint, data, config);
