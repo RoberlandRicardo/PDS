@@ -28,11 +28,12 @@ function useEnviarRequisicao() {
                 response = api.delete(endpoint, config);
             break;
         }
-
+        return response
 
     }
 
     return {
-
+        enviarRequisicao
     }
 }
+export default useEnviarRequisicao
