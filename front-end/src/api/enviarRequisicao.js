@@ -22,11 +22,7 @@ function useEnviarRequisicao() {
                 response = api.get(endpoint, config);
             break;
             case 'POST':
-                response = api.post(endpoint, data, {
-                    headers: {
-                      'Access-Control-Allow-Origin': '*',
-                    }
-                  });
+                response = api.post(endpoint, data, config);
             break;
             case 'PUT':
                 response = api.put(endpoint, data, config);
