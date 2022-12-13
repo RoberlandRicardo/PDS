@@ -1,30 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/button";
 import Input from "../../components/input";
 import styles from "./styles.module.css";
 import useEnviarRequisicao from "../../api/enviarRequisicao";
+import bcrypt from 'bcryptjs';
 
 function Registrar(params) {
 
+    const navigate = useNavigate();
+
     const {enviarRequisicao} = useEnviarRequisicao()
 
-    const [nome, setNome] = useState();
-    const [email, setEmail] = useState();
-    const [senha, setSenha] = useState();
-    const [repeteSenha, setRepeteSenha] = useState();
-    const [camposValidados, setCamposValidados] = useState();
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [repeteSenha, setRepeteSenha] = useState("");
+    const [camposValidados, setCamposValidados] = useState(false);
 
-    function cadastrar() {
-       
-        enviarRequisicao({
+    useEffect(() => {
+
+    }, [senha, repeteSenha])
+
+    async function cadastrar() {
+
+        var hashedSenha = await bcrypt.hash(senha, await bcrypt.genSalt());
+
+        const response = await enviarRequisicao({
             method: "POST",
             endpoint: "/usuario",
             data: {
                 nome: nome,
                 email: email,
-                senha: senha,
+                senha: hashedSenha,
             }
         })
+
+        if (!response) {
+
+        } else if (response.status >= 200 && response.status < 300) {
+            navigate("/login");
+        } else {
+
+        }
     }
 
     return (

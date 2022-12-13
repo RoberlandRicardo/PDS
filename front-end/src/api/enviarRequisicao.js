@@ -1,10 +1,14 @@
 import axios from "axios";
+import { useContext } from "react";
+import { MainContext } from "../stores/mainContext";
 
 const api = axios.create({
     baseURL: "http://localhost:8080" 
 });
 
 function useEnviarRequisicao() {
+
+    const {logedUser} = useContext(MainContext);
     
     function enviarRequisicao({method, endpoint, data, headers}) {
 
@@ -13,9 +17,12 @@ function useEnviarRequisicao() {
         const config = {
             headers: {...headers,
                 'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             }
         }
+
+        if (logedUser)
+            config.headers.Authorization = "Bearer " + logedUser.token;
 
         switch (method) {
             case 'GET':
@@ -31,6 +38,9 @@ function useEnviarRequisicao() {
                 response = api.delete(endpoint, config);
             break;
         }
+
+
+
         return response
 
     }

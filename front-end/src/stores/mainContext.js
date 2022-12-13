@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 const initialValue = {
-    logedUser: null
+    logedUser: null,
+    setLogedUser: () => {},
 }
 
 export const MainContext = React.createContext(initialValue);

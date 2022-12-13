@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/button";
 import Input from "../../components/input";
@@ -17,9 +17,9 @@ function Login(params) {
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
 
-    function executeLogin(params) {
+    async function executeLogin(params) {
 
-        enviarRequisicao({
+        const response = await enviarRequisicao({
             method: "POST",
             endpoint: "/login",
             data: {
@@ -28,7 +28,17 @@ function Login(params) {
             }
         })
 
-        navigate("/homepage");
+        if (!response) {
+
+        } else if (response.status >= 200 && response.status < 300) {
+            localStorage.setItem('token', JSON.stringify(response.data.token));
+            setLogedUser(
+                response.data
+            );
+            navigate("/homepage");
+        } else {
+
+        }
     }
 
     return (
