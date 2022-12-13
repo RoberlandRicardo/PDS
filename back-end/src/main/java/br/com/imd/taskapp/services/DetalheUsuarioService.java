@@ -1,4 +1,4 @@
-package br.com.imd.taskapp.service;
+package br.com.imd.taskapp.services;
 
 import java.util.Optional;
 

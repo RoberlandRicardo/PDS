@@ -18,8 +18,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 import br.com.imd.taskapp.data.DetalheUsuarioData;
+import br.com.imd.taskapp.dto.SessaoDTO;
 import br.com.imd.taskapp.entities.Usuario;
 
 public class JWTAutenticarFilter extends UsernamePasswordAuthenticationFilter {
@@ -61,7 +63,11 @@ public class JWTAutenticarFilter extends UsernamePasswordAuthenticationFilter {
 				.withExpiresAt(new Date(System.currentTimeMillis() + TOKEN_EXPIRACAO))
 				.sign(Algorithm.HMAC512(TOKEN_SENHA));
 		
-		response.getWriter().write(token);
+		SessaoDTO sessao = new SessaoDTO(usuarioData.getUsuario(), token);
+		String jsonSessao = new Gson().toJson(sessao);
+		
+		response.setContentType("application/json");
+		response.getWriter().write(jsonSessao);
 		response.getWriter().flush();
 	}
 	

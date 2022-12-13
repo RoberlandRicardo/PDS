@@ -59,9 +59,8 @@ public class TarefaController {
 		return result;
 	}
 	
-	@GetMapping()
-	public Page<Tarefa> filtraTarefaPorUsuario(
-			@RequestParam(value = "id")long id,
+	@GetMapping(value="/usuario/{id}")
+	public Page<Tarefa> filtraTarefaPorUsuario(@PathVariable long id,
 			Pageable pageable){
 		return service.filtraTarefaPorUsuario(id, pageable);
 	}

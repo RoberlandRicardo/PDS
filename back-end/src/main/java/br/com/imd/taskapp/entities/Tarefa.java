@@ -26,6 +26,9 @@ public class Tarefa {
 	@Column(name="idusuario")
 	private long idUsuario;
 	
+	@Column(name="nome")
+	private String nome;
+	
 	@Column(name="descricaotarefa")
 	private String descricao;
 	
@@ -47,8 +50,9 @@ public class Tarefa {
 		
 	}
 
-	public Tarefa(long id, long idUsuario, String descricao, LocalDate date, StatusTarefa status) {
+	public Tarefa(long id, String nome, long idUsuario, String descricao, LocalDate date, StatusTarefa status) {
 		this.id = id;
+		this.nome = nome;
 		this.idUsuario = idUsuario;
 		this.descricao = descricao;
 		this.date = date;
@@ -69,6 +73,14 @@ public class Tarefa {
 
 	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getDescricao() {

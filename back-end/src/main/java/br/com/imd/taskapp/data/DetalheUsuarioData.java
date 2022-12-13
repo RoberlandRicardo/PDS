@@ -56,4 +56,9 @@ public class DetalheUsuarioData implements UserDetails {
 		// TODO Auto-generated method stub
 		return true;
 	}
+	
+	public Usuario getUsuario() {
+		if (!usuario.isEmpty()) return usuario.get();
+		return null;
+	}
 }
